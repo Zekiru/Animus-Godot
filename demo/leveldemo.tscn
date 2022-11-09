@@ -1,0 +1,560 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://demo/playerdemo.tscn" type="PackedScene" id=1]
+[ext_resource path="res://1chardemo/d38lk4g-32855cb0-fc73-4249-abdf-100d37d9d01c.png" type="Texture" id=3]
+[ext_resource path="res://demo/leveldemo.gd" type="Script" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 160, 1376 )
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 120.0
+height = 336.0
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 296, 40 )
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 104.0
+height = 140.0
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 44.7377
+height = 219.483
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 64, 51.6512 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 32, 31.2235 )
+
+[sub_resource type="CapsuleShape2D" id=8]
+radius = 67.5446
+height = 60.5464
+
+[node name="leveldemo" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="background" type="ColorRect" parent="."]
+margin_left = -3892.78
+margin_top = -3745.32
+margin_right = 3348.22
+margin_bottom = 3147.68
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="demomap" type="Sprite" parent="."]
+scale = Vector2( 4.50625, 4.29882 )
+texture = ExtResource( 3 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color( 0.054902, 0.054902, 0.141176, 1 )
+
+[node name="monstdemo1" type="Node" parent="."]
+
+[node name="player1demo" parent="." instance=ExtResource( 1 )]
+position = Vector2( -6.633, -934.824 )
+
+[node name="mapwalls" type="StaticBody2D" parent="."]
+visible = false
+collision_layer = 7
+collision_mask = 7
+
+[node name="wall1" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -1376.89, 9.52441 )
+shape = SubResource( 1 )
+
+[node name="wall16" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 26.01, 1502.93 )
+rotation = -1.57079
+shape = SubResource( 1 )
+
+[node name="wall19" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 27.9105, -1462.08 )
+rotation = -1.57079
+shape = SubResource( 1 )
+
+[node name="wall2" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 1376.54, 8 )
+shape = SubResource( 1 )
+
+[node name="wall3" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -1244.89, 750.918 )
+shape = SubResource( 2 )
+
+[node name="wall4" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -1138.69, 1014.84 )
+rotation = 1.57079
+shape = SubResource( 2 )
+
+[node name="wall5" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -848.027, 1141.48 )
+rotation = 1.57079
+shape = SubResource( 2 )
+
+[node name="wall14" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -848.027, 1141.48 )
+rotation = 1.57079
+shape = SubResource( 2 )
+
+[node name="wall6" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -128, 1336 )
+shape = SubResource( 3 )
+
+[node name="wall7" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 2.37329, -1334.98 )
+shape = SubResource( 3 )
+
+[node name="wall8" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -596.05, 1234.77 )
+rotation = 1.57079
+shape = SubResource( 2 )
+
+[node name="wall9" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -397.349, 1440.14 )
+shape = SubResource( 2 )
+
+[node name="wall10" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 118.692, 1430.8 )
+shape = SubResource( 2 )
+
+[node name="wall11" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 336, 1217.42 )
+rotation = 1.57079
+shape = SubResource( 2 )
+
+[node name="wall12" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 900.856, 1078.13 )
+rotation = 1.57079
+shape = SubResource( 2 )
+
+[node name="wall15" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 804.581, 1205.55 )
+rotation = 1.57079
+shape = SubResource( 2 )
+
+[node name="wall13" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 1188.6, 730.554 )
+rotation = 6.28318
+shape = SubResource( 2 )
+
+[node name="wall17" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 619.923, 436.501 )
+shape = SubResource( 3 )
+
+[node name="wall18" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 532.534, 447.755 )
+shape = SubResource( 3 )
+
+[node name="wall22" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 1088, 236.158 )
+shape = SubResource( 4 )
+
+[node name="wall25" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 1226.1, 120.278 )
+shape = SubResource( 4 )
+
+[node name="wall23" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 953.344, 377.498 )
+shape = SubResource( 4 )
+
+[node name="wall29" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -1106.31, 918.108 )
+shape = SubResource( 4 )
+
+[node name="wall24" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -465.452, -602.841 )
+shape = SubResource( 4 )
+
+[node name="wall48" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -349.484, -1169.21 )
+shape = SubResource( 4 )
+
+[node name="wall118" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -340.045, -1271.15 )
+shape = SubResource( 4 )
+
+[node name="wall27" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -344, -992 )
+shape = SubResource( 4 )
+
+[node name="wall28" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -344, -784 )
+shape = SubResource( 4 )
+
+[node name="wall33" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -992.709, -814.52 )
+rotation = 1.57079
+shape = SubResource( 4 )
+
+[node name="wall39" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -1145.27, -803.925 )
+rotation = 1.57079
+shape = SubResource( 4 )
+
+[node name="wall45" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -706.101, -772.076 )
+rotation = 1.57079
+shape = SubResource( 4 )
+
+[node name="wall34" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -638.643, -559.89 )
+shape = SubResource( 4 )
+
+[node name="wall112" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -661.039, -448.6 )
+shape = SubResource( 4 )
+
+[node name="wall35" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -273.344, -544.054 )
+rotation = 1.57079
+shape = SubResource( 4 )
+
+[node name="wall113" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -509.867, -517.068 )
+rotation = 1.57079
+shape = SubResource( 4 )
+
+[node name="wall36" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -182.806, -618.223 )
+rotation = 1.57079
+shape = SubResource( 5 )
+
+[node name="wall37" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 322.815, -1332.3 )
+rotation = 1.57079
+shape = SubResource( 4 )
+
+[node name="wall38" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 552.622, -1351.85 )
+rotation = 1.57079
+shape = SubResource( 4 )
+
+[node name="wall49" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 754.82, -1351.39 )
+rotation = 1.57079
+shape = SubResource( 4 )
+
+[node name="wall89" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 1010.84, -1293.57 )
+rotation = 1.57079
+shape = SubResource( 4 )
+
+[node name="wall90" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 1106.95, -1156.09 )
+rotation = 1.57079
+shape = SubResource( 4 )
+
+[node name="wall94" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 1016.18, -1100.02 )
+rotation = 1.57079
+shape = SubResource( 4 )
+
+[node name="wall40" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 971.959, -1194.97 )
+rotation = 1.57079
+shape = SubResource( 4 )
+
+[node name="wall41" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 1157.34, -968.199 )
+rotation = 1.57079
+shape = SubResource( 4 )
+
+[node name="wall42" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -144.835, 758.886 )
+shape = SubResource( 6 )
+
+[node name="wall43" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -612.687, 310.827 )
+shape = SubResource( 7 )
+
+[node name="wall44" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -0.0793445, -315.514 )
+shape = SubResource( 8 )
+
+[node name="wall96" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -1224.34, 450.89 )
+shape = SubResource( 8 )
+
+[node name="wall97" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -1227.41, 305.86 )
+shape = SubResource( 8 )
+
+[node name="wall98" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -1224.58, 173.543 )
+shape = SubResource( 8 )
+
+[node name="wall99" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -1226.46, 35.3496 )
+shape = SubResource( 8 )
+
+[node name="wall100" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -1225.75, -103.325 )
+shape = SubResource( 8 )
+
+[node name="wall101" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -1224.58, -242.711 )
+shape = SubResource( 8 )
+
+[node name="wall102" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -1224.34, -381.154 )
+shape = SubResource( 8 )
+
+[node name="wall103" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -1227.18, -515.34 )
+shape = SubResource( 8 )
+
+[node name="wall104" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -1225.29, -656.615 )
+shape = SubResource( 8 )
+
+[node name="wall83" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -214.894, -1198.07 )
+shape = SubResource( 8 )
+
+[node name="wall117" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -215.838, -1335.88 )
+shape = SubResource( 8 )
+
+[node name="wall84" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 216.921, -1202.15 )
+shape = SubResource( 8 )
+
+[node name="wall85" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 362.276, -1205.92 )
+shape = SubResource( 8 )
+
+[node name="wall86" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 503.898, -1204.68 )
+shape = SubResource( 8 )
+
+[node name="wall87" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 649.295, -1206.87 )
+shape = SubResource( 8 )
+
+[node name="wall92" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 935.342, -929.382 )
+shape = SubResource( 8 )
+
+[node name="wall93" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 1081.62, -794.401 )
+shape = SubResource( 8 )
+
+[node name="wall91" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 793.296, -1065.6 )
+shape = SubResource( 8 )
+
+[node name="wall88" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 790.626, -1207.03 )
+shape = SubResource( 8 )
+
+[node name="wall50" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 218.132, 370.873 )
+shape = SubResource( 8 )
+
+[node name="wall114" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 359.769, 239.068 )
+shape = SubResource( 8 )
+
+[node name="wall115" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 363.488, 345.389 )
+shape = SubResource( 8 )
+
+[node name="wall116" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 366.488, 325.389 )
+shape = SubResource( 8 )
+
+[node name="wall51" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 214.747, 514.902 )
+shape = SubResource( 8 )
+
+[node name="wall95" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 282.986, 412.818 )
+shape = SubResource( 8 )
+
+[node name="wall52" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 360.73, 512.852 )
+shape = SubResource( 8 )
+
+[node name="wall58" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 937.22, 580.767 )
+shape = SubResource( 8 )
+
+[node name="wall122" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 1079.74, 438.242 )
+shape = SubResource( 8 )
+
+[node name="wall123" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 1018.39, 519.415 )
+shape = SubResource( 8 )
+
+[node name="wall119" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 1082.58, 579.823 )
+shape = SubResource( 8 )
+
+[node name="wall120" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 1081.63, 711.966 )
+shape = SubResource( 8 )
+
+[node name="wall121" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 1080.69, 854.491 )
+shape = SubResource( 8 )
+
+[node name="wall61" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 938.001, 992.194 )
+shape = SubResource( 8 )
+
+[node name="wall124" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 1063.54, 990.306 )
+shape = SubResource( 8 )
+
+[node name="wall64" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 70.1936, 1129.3 )
+shape = SubResource( 8 )
+
+[node name="wall68" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -360.407, 1130.24 )
+shape = SubResource( 8 )
+
+[node name="wall69" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -505.904, 1130.63 )
+shape = SubResource( 8 )
+
+[node name="wall70" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -651.955, 992.976 )
+shape = SubResource( 8 )
+
+[node name="wall71" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -791.007, 991.088 )
+shape = SubResource( 8 )
+
+[node name="wall72" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -936.113, 852.979 )
+shape = SubResource( 8 )
+
+[node name="wall73" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -1079.49, 722.88 )
+shape = SubResource( 8 )
+
+[node name="wall74" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -1081.38, 582.331 )
+shape = SubResource( 8 )
+
+[node name="wall65" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 213.412, 1132.51 )
+shape = SubResource( 8 )
+
+[node name="wall66" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 360.178, 1129.13 )
+shape = SubResource( 8 )
+
+[node name="wall67" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 504.732, 1129.84 )
+shape = SubResource( 8 )
+
+[node name="wall62" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 792.895, 992.585 )
+shape = SubResource( 8 )
+
+[node name="wall63" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 647.95, 989.362 )
+shape = SubResource( 8 )
+
+[node name="wall53" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 504.016, 443.736 )
+shape = SubResource( 8 )
+
+[node name="wall54" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 648.732, 447.512 )
+shape = SubResource( 8 )
+
+[node name="wall57" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 792.895, 301.138 )
+shape = SubResource( 8 )
+
+[node name="wall59" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 937.611, 163.029 )
+shape = SubResource( 8 )
+
+[node name="wall60" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 1082.72, 29.7075 )
+shape = SubResource( 8 )
+
+[node name="wall105" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 1225.28, -105.823 )
+shape = SubResource( 8 )
+
+[node name="wall106" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 1227.17, -243.626 )
+shape = SubResource( 8 )
+
+[node name="wall107" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 1225.58, -380.743 )
+shape = SubResource( 8 )
+
+[node name="wall108" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 1226.23, -517.259 )
+shape = SubResource( 8 )
+
+[node name="wall109" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 1223.4, -653.175 )
+shape = SubResource( 8 )
+
+[node name="wall110" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 1224.6, -791.58 )
+shape = SubResource( 8 )
+
+[node name="wall56" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 645.509, 303.026 )
+shape = SubResource( 8 )
+
+[node name="wall55" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( 792.895, 444.68 )
+shape = SubResource( 8 )
+
+[node name="wall46" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -575.725, -243.492 )
+shape = SubResource( 8 )
+
+[node name="wall78" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -793.448, -378.916 )
+shape = SubResource( 8 )
+
+[node name="wall79" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -795.336, -520.018 )
+shape = SubResource( 8 )
+
+[node name="wall81" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -1080.47, -657.22 )
+shape = SubResource( 8 )
+
+[node name="wall82" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -934.169, -656.577 )
+shape = SubResource( 8 )
+
+[node name="wall80" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -796.508, -654.674 )
+shape = SubResource( 8 )
+
+[node name="wall75" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -501.737, -382.138 )
+shape = SubResource( 8 )
+
+[node name="wall76" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -360.798, -381.032 )
+shape = SubResource( 8 )
+
+[node name="wall77" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -214.976, -383.311 )
+shape = SubResource( 8 )
+
+[node name="wall47" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -863.641, -244.393 )
+shape = SubResource( 8 )
+
+[node name="wall111" type="CollisionShape2D" parent="mapwalls"]
+position = Vector2( -719.831, -242.763 )
+shape = SubResource( 8 )

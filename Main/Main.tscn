@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Main/Main.gd" type="Script" id=1]
+[ext_resource path="res://gui/menu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://gui/transitionscreen.tscn" type="PackedScene" id=3]
+[ext_resource path="res://level/startup_cutscene.tscn" type="PackedScene" id=5]
+
+[node name="Main" type="Node"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="startup_cutscene" parent="." instance=ExtResource( 5 )]
+
+[node name="DarkModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color( 0, 0, 0, 1 )
+
+[node name="menu" parent="." instance=ExtResource( 2 )]
+
+[node name="CurrentScene" type="Node2D" parent="."]
+pause_mode = 1
+
+[node name="transitionscreen" parent="." instance=ExtResource( 3 )]
+
+[connection signal="pause_pressed" from="menu" to="." method="_on_menu_pause_pressed"]
+[connection signal="quit_pressed" from="menu" to="." method="_on_menu_quit_pressed"]
+[connection signal="resume_pressed" from="menu" to="." method="_on_menu_resume_pressed"]
+[connection signal="start_pressed" from="menu" to="." method="_on_menu_start_pressed"]
+[connection signal="transitioned" from="transitionscreen" to="." method="_on_transitionscreen_transitioned"]

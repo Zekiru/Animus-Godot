@@ -1,0 +1,166 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://enemy/enemy_A.gd" type="Script" id=1]
+[ext_resource path="res://assets/animatedsprites/enemy1/front_idle.png" type="Texture" id=2]
+[ext_resource path="res://assets/animatedsprites/enemy1/front_right_walk.png" type="Texture" id=3]
+[ext_resource path="res://assets/animatedsprites/enemy1/diag_bottomright_idle.png" type="Texture" id=4]
+[ext_resource path="res://assets/light/light3.png" type="Texture" id=5]
+[ext_resource path="res://assets/light/lightangle2.png" type="Texture" id=6]
+[ext_resource path="res://assets/animatedsprites/enemy1/diag_bottomright_walk1.png" type="Texture" id=7]
+[ext_resource path="res://assets/animatedsprites/enemy1/front_left_walk.png" type="Texture" id=8]
+[ext_resource path="res://assets/animatedsprites/enemy1/walk_left_back.png" type="Texture" id=9]
+[ext_resource path="res://assets/animatedsprites/enemy1/side_right_idle.png" type="Texture" id=10]
+[ext_resource path="res://assets/animatedsprites/enemy1/diag_bottomright_walk2.png" type="Texture" id=11]
+[ext_resource path="res://assets/animatedsprites/enemy1/side_right_walk1.png" type="Texture" id=12]
+[ext_resource path="res://assets/animatedsprites/enemy1/idle_back.png" type="Texture" id=13]
+[ext_resource path="res://assets/animatedsprites/enemy1/side_right_walk2.png" type="Texture" id=14]
+[ext_resource path="res://assets/animatedsprites/enemy1/diag_topright_idle.png" type="Texture" id=15]
+[ext_resource path="res://assets/animatedsprites/enemy1/diag_topright_walk2.png" type="Texture" id=16]
+[ext_resource path="res://assets/animatedsprites/enemy1/diag_topright_walk1.png" type="Texture" id=17]
+[ext_resource path="res://assets/animatedsprites/enemy1/walk_right_back.png" type="Texture" id=18]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "downright",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 17 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "upright",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 32.0002
+height = 63.9997
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 104.0
+height = 64.0
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 1100.0
+
+[node name="enemy_A" type="KinematicBody2D" groups=["enemy"]]
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+light_mask = 2
+margin_left = -352.0
+margin_top = -664.0
+margin_right = 1744.0
+margin_bottom = 648.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="shadowsprite" type="Sprite" parent="."]
+self_modulate = Color( 0, 0, 0, 1 )
+light_mask = 0
+position = Vector2( -3.8147e-06, -46.7266 )
+scale = Vector2( 5.5, 1.70703 )
+texture = ExtResource( 5 )
+offset = Vector2( 0, 50 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -88 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 1 )
+animation = "down"
+speed_scale = 1.5
+
+[node name="walkarea" type="CollisionShape2D" parent="."]
+rotation = 1.57079
+shape = SubResource( 2 )
+
+[node name="enemy_hitbox" type="Area2D" parent="."]
+position = Vector2( 0, -136 )
+collision_layer = 8
+collision_mask = 8
+
+[node name="hitboxshape" type="CollisionShape2D" parent="enemy_hitbox"]
+position = Vector2( 0, 56 )
+shape = SubResource( 3 )
+
+[node name="sight" type="Area2D" parent="."]
+position = Vector2( 0, -176 )
+collision_layer = 0
+collision_mask = 4
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="cone_sight" type="CollisionPolygon2D" parent="sight"]
+polygon = PoolVector2Array( 0, -16, 0, 16, 1012.02, 406.692, 1063.07, 285.042, 1099.81, -0.0450668, 1064, -280, 1012.37, -406.755 )
+
+[node name="radial_sight" type="CollisionShape2D" parent="sight"]
+shape = SubResource( 4 )
+
+[node name="lightsight" type="Light2D" parent="sight"]
+position = Vector2( 4.67849, -9.09495e-13 )
+scale = Vector2( 6.92808, 3.82653 )
+texture = ExtResource( 6 )
+offset = Vector2( 92, 0 )
+texture_scale = 2.94
+mode = 2
+range_item_cull_mask = 2
+shadow_enabled = true
+shadow_item_cull_mask = 7
+
+[node name="near_range" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="radial_sight" type="CollisionShape2D" parent="near_range"]
+position = Vector2( 0, -174 )
+shape = SubResource( 4 )
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 5 )
+offset = Vector2( 0, -75 )
+texture_scale = 12.0
+energy = 0.8
+mode = 2
+range_item_cull_mask = 2
+shadow_enabled = true
+shadow_item_cull_mask = 7
+
+[node name="LoadTime" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[node name="MoveTime" type="Timer" parent="."]
+one_shot = true
+
+[node name="LastSeenTime" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="Stun_Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="body_entered" from="sight" to="." method="_on_sight_body_entered"]
+[connection signal="body_exited" from="sight" to="." method="_on_sight_body_exited"]
+[connection signal="body_entered" from="near_range" to="." method="_on_near_range_body_entered"]
+[connection signal="body_exited" from="near_range" to="." method="_on_near_range_body_exited"]
+[connection signal="timeout" from="LoadTime" to="." method="_on_LoadTime_timeout"]

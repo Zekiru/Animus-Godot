@@ -1,0 +1,1628 @@
+[gd_scene load_steps=108 format=2]
+
+[ext_resource path="res://assets/cgs/cg2_ESCAPE.png" type="Texture" id=1]
+[ext_resource path="res://assets/xolonium-regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://gui/menu.gd" type="Script" id=3]
+[ext_resource path="res://assets/animatedsprites/Caleb_PlayerB/Caleb-Front3.png" type="Texture" id=4]
+[ext_resource path="res://assets/buttons/button1normal.png" type="Texture" id=5]
+[ext_resource path="res://assets/buttons/button1pressed.png" type="Texture" id=6]
+[ext_resource path="res://assets/buttons/button1hover.png" type="Texture" id=7]
+[ext_resource path="res://assets/buttons/button2normal.png" type="Texture" id=8]
+[ext_resource path="res://assets/buttons/button2hover.png" type="Texture" id=9]
+[ext_resource path="res://assets/buttons/button2pressed.png" type="Texture" id=10]
+[ext_resource path="res://assets/animatedsprites/Cecile_PlayerA/Cecil-Front3.png" type="Texture" id=11]
+[ext_resource path="res://assets/animatedsprites/Ladonna_PlayerC/Ladonna-F4.png" type="Texture" id=12]
+[ext_resource path="res://assets/animatedsprites/Ladonna_PlayerC/Ladonna-F1.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/textbox1.png" type="Texture" id=14]
+[ext_resource path="res://assets/animatedsprites/Caleb_PlayerB/Caleb-Front2.png" type="Texture" id=15]
+[ext_resource path="res://assets/animatedsprites/Caleb_PlayerB/Caleb-Front1.png" type="Texture" id=16]
+[ext_resource path="res://assets/animatedsprites/Cecile_PlayerA/Cecil-Front1.png" type="Texture" id=17]
+[ext_resource path="res://assets/animatedsprites/Cecile_PlayerA/Cecil-Front2.png" type="Texture" id=18]
+[ext_resource path="res://assets/animatedsprites/Ladonna_PlayerC/Ladonna-F2.png" type="Texture" id=19]
+[ext_resource path="res://assets/HUD/healthbar2.png" type="Texture" id=20]
+[ext_resource path="res://assets/HUD/healthbar1.png" type="Texture" id=21]
+[ext_resource path="res://assets/HUD/staminabar2.png" type="Texture" id=22]
+[ext_resource path="res://assets/HUD/staminabar1.png" type="Texture" id=23]
+[ext_resource path="res://assets/HUD/staminabar3.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprites/fadedbg1.png" type="Texture" id=25]
+[ext_resource path="res://assets/items/key_a.png" type="Texture" id=26]
+[ext_resource path="res://assets/items/key_ab.png" type="Texture" id=27]
+[ext_resource path="res://assets/items/key_b.png" type="Texture" id=28]
+[ext_resource path="res://assets/animatedsprites/Ladonna_PlayerC/Ladonna-F3.png" type="Texture" id=29]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+outline_size = 5
+outline_color = Color( 0.172549, 0, 0, 0.431373 )
+use_filter = true
+extra_spacing_char = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+extra_spacing_bottom = 12
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 44
+use_filter = true
+extra_spacing_bottom = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 13 ), ExtResource( 19 ), ExtResource( 29 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "char3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "char1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "char2",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=5]
+size = 38
+extra_spacing_bottom = 14
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 46
+outline_size = 2
+outline_color = Color( 0, 0, 0, 0.47451 )
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 22
+outline_size = 2
+outline_color = Color( 0, 0, 0, 0.423529 )
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 70
+use_filter = true
+extra_spacing_char = 8
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 42
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=10]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "Level 1: Locked In", "Level 1: Locked In" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2, 4, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "Level 2: Misleading Paths", "Level 2: Misleading Paths" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2, 4, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "level1"
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "level2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+
+[sub_resource type="AnimationNodeStateMachine" id=20]
+states/idle/node = SubResource( 13 )
+states/idle/position = Vector2( 264, 83 )
+states/level1/node = SubResource( 14 )
+states/level1/position = Vector2( 445, 83 )
+states/level2/node = SubResource( 15 )
+states/level2/position = Vector2( 382, 178 )
+transitions = [ "idle", "level1", SubResource( 16 ), "level1", "idle", SubResource( 17 ), "idle", "level2", SubResource( 18 ), "level2", "idle", SubResource( 19 ) ]
+start_node = "idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=21]
+
+[sub_resource type="DynamicFont" id=22]
+size = 46
+use_filter = true
+extra_spacing_bottom = 16
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=23]
+size = 46
+use_filter = true
+extra_spacing_bottom = 16
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=24]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 26 ), ExtResource( 26 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+
+[sub_resource type="Animation" id=25]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 27 ), ExtResource( 27 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+
+[sub_resource type="Animation" id=26]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 28 ), ExtResource( 28 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+
+[sub_resource type="Animation" id=27]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+
+[sub_resource type="DynamicFont" id=28]
+size = 30
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=29]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=30]
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("text:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "It is Locked..." ]
+}
+
+[sub_resource type="Animation" id=31]
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("text:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "A key?", "It looks, incomplete..." ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 2, 2.5, 3, 5.5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=32]
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("text:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "Another key?", "It seems that they form a whole key now..." ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 2, 2.5, 3, 5.5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=33]
+length = 3.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("text:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Is that…?" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 3, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=34]
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("text:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "...", "Where am I?" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 4, 5, 6, 9, 10 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=35]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("text:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Okay, that should unlock it." ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 1.7, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=36]
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("text:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "I need the other half of the key..." ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 2.2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=37]
+animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=38]
+animation = "its_locked"
+
+[sub_resource type="AnimationNodeAnimation" id=39]
+animation = "level1_1key"
+
+[sub_resource type="AnimationNodeAnimation" id=40]
+animation = "level1_allkeys"
+
+[sub_resource type="AnimationNodeAnimation" id=41]
+animation = "level1_scene2"
+
+[sub_resource type="AnimationNodeAnimation" id=42]
+animation = "level1_started"
+
+[sub_resource type="AnimationNodeAnimation" id=43]
+animation = "ok_that_should_do_it"
+
+[sub_resource type="AnimationNodeAnimation" id=44]
+animation = "one_more_keypart"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=45]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=46]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=47]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=48]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=49]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=50]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=51]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=52]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=53]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=54]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=55]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=56]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=57]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=58]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id=59]
+states/idle/node = SubResource( 37 )
+states/idle/position = Vector2( 377, 109 )
+states/its_locked/node = SubResource( 38 )
+states/its_locked/position = Vector2( 106, -30 )
+states/level1_1key/node = SubResource( 39 )
+states/level1_1key/position = Vector2( 377, -3 )
+states/level1_allkeys/node = SubResource( 40 )
+states/level1_allkeys/position = Vector2( 564, -3 )
+states/level1_scene2/node = SubResource( 41 )
+states/level1_scene2/position = Vector2( 473, 221 )
+states/level1_started/node = SubResource( 42 )
+states/level1_started/position = Vector2( 292, 221 )
+states/ok_that_should_do_it/node = SubResource( 43 )
+states/ok_that_should_do_it/position = Vector2( 106, 138 )
+states/one_more_keypart/node = SubResource( 44 )
+states/one_more_keypart/position = Vector2( 106, 46 )
+transitions = [ "idle", "level1_started", SubResource( 45 ), "level1_started", "idle", SubResource( 46 ), "idle", "ok_that_should_do_it", SubResource( 47 ), "ok_that_should_do_it", "idle", SubResource( 48 ), "idle", "its_locked", SubResource( 49 ), "its_locked", "one_more_keypart", SubResource( 50 ), "one_more_keypart", "idle", SubResource( 51 ), "its_locked", "idle", SubResource( 52 ), "idle", "level1_scene2", SubResource( 53 ), "level1_scene2", "idle", SubResource( 54 ), "idle", "level1_1key", SubResource( 55 ), "level1_1key", "idle", SubResource( 56 ), "level1_allkeys", "idle", SubResource( 57 ), "idle", "level1_allkeys", SubResource( 58 ) ]
+start_node = "idle"
+graph_offset = Vector2( -35.2074, -76.0785 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=60]
+
+[sub_resource type="DynamicFont" id=61]
+size = 400
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=62]
+size = 200
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=63]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("HUD/bigtext/BEWARE:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.490196 ), Color( 1, 1, 1, 0.490196 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("HUD/bigtext/RUN:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=64]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("HUD/bigtext/RUN:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("HUD/bigtext/BEWARE:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=65]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("HUD/bigtext/RUN:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.333333 ), Color( 1, 1, 1, 0.333333 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("HUD/bigtext/BEWARE:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=66]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("mainmenu:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1312, 0 ), Vector2( -1280, 0 ) ]
+}
+
+[sub_resource type="Animation" id=67]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("mainmenu:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1280, 0 ), Vector2( 32, 0 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=68]
+animation = "hud_beware"
+
+[sub_resource type="AnimationNodeAnimation" id=69]
+animation = "hud_idle"
+
+[sub_resource type="AnimationNodeAnimation" id=70]
+animation = "hud_run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=71]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=72]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=73]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=74]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=75]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=76]
+
+[sub_resource type="AnimationNodeStateMachine" id=77]
+states/hud_beware/node = SubResource( 68 )
+states/hud_beware/position = Vector2( 300, 124 )
+states/hud_idle/node = SubResource( 69 )
+states/hud_idle/position = Vector2( 195, 44 )
+states/hud_run/node = SubResource( 70 )
+states/hud_run/position = Vector2( 108, 124 )
+transitions = [ "hud_idle", "hud_run", SubResource( 71 ), "hud_run", "hud_idle", SubResource( 72 ), "hud_idle", "hud_beware", SubResource( 73 ), "hud_beware", "hud_idle", SubResource( 74 ), "hud_beware", "hud_run", SubResource( 75 ), "hud_run", "hud_beware", SubResource( 76 ) ]
+start_node = "hud_idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=78]
+
+[node name="menu" type="CanvasLayer"]
+pause_mode = 2
+layer = 2
+script = ExtResource( 3 )
+
+[node name="bg" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="Sprite" parent="bg"]
+self_modulate = Color( 0.47451, 0.627451, 0.843137, 1 )
+scale = Vector2( 1.82857, 1.82741 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="bgshadow" type="Sprite" parent="bg"]
+self_modulate = Color( 0, 0, 0, 0.768627 )
+position = Vector2( 1280.81, -0.00252516 )
+rotation = 1.57079
+scale = Vector2( 2.81201, 8.89454 )
+texture = ExtResource( 25 )
+centered = false
+
+[node name="fadedbg" type="ColorRect" parent="bg"]
+self_modulate = Color( 1, 1, 1, 0.913725 )
+light_mask = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.376471 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mainmenu" type="Control" parent="."]
+anchor_right = 2.0
+anchor_bottom = 0.933
+margin_bottom = 48.24
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu1" type="Control" parent="mainmenu"]
+anchor_right = 0.5
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="menuitems" type="Control" parent="mainmenu/menu1"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -360.0
+margin_right = 1280.0
+margin_bottom = 360.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="mainmenu/menu1/menuitems"]
+anchor_top = 0.267
+anchor_bottom = 0.267
+margin_left = 152.0
+margin_top = -48.24
+margin_right = 1128.0
+margin_bottom = 47.76
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "ANIMUS"
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="TextureButton" parent="mainmenu/menu1/menuitems"]
+self_modulate = Color( 0.568627, 1, 0.494118, 1 )
+anchor_top = 0.444
+anchor_bottom = 0.444
+margin_left = 152.0
+margin_top = -47.68
+margin_right = 488.0
+margin_bottom = 48.32
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="mainmenu/menu1/menuitems/Play"]
+margin_right = 336.0
+margin_bottom = 96.0
+custom_fonts/font = SubResource( 2 )
+text = "Play"
+align = 1
+valign = 1
+
+[node name="Settings" type="TextureButton" parent="mainmenu/menu1/menuitems"]
+self_modulate = Color( 0.34902, 1, 0.878431, 1 )
+anchor_top = 0.6
+anchor_bottom = 0.6
+margin_left = 152.0
+margin_top = -48.0
+margin_right = 488.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
+expand = true
+
+[node name="Label" type="Label" parent="mainmenu/menu1/menuitems/Settings"]
+margin_right = 336.0
+margin_bottom = 96.0
+custom_fonts/font = SubResource( 2 )
+text = "Settings"
+align = 1
+valign = 1
+
+[node name="Quit" type="TextureButton" parent="mainmenu/menu1/menuitems"]
+self_modulate = Color( 0.756863, 0.435294, 1, 1 )
+anchor_top = 0.756
+anchor_bottom = 0.756
+margin_left = 152.0
+margin_top = -48.32
+margin_right = 488.0
+margin_bottom = 47.68
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="mainmenu/menu1/menuitems/Quit"]
+margin_right = 336.0
+margin_bottom = 96.0
+custom_fonts/font = SubResource( 2 )
+text = "Quit"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menuselect" type="Control" parent="mainmenu"]
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="selectionbox" type="Control" parent="mainmenu/menuselect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -456.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="selection" type="Control" parent="mainmenu/menuselect/selectionbox"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -252.0
+margin_top = 104.0
+margin_right = 260.0
+margin_bottom = 424.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="leftselect" type="TextureButton" parent="mainmenu/menuselect/selectionbox/selection"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -48.0
+margin_right = 96.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="mainmenu/menuselect/selectionbox/selection/leftselect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 3 )
+text = "<"
+align = 1
+valign = 1
+
+[node name="rightselect" type="TextureButton" parent="mainmenu/menuselect/selectionbox/selection"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -96.0
+margin_top = -48.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="mainmenu/menuselect/selectionbox/selection/rightselect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 3 )
+text = ">"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="charview" type="Control" parent="mainmenu/menuselect/selectionbox/selection"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -160.0
+margin_top = -160.0
+margin_right = 160.0
+margin_bottom = 160.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="mainmenu/menuselect/selectionbox/selection/charview"]
+visible = false
+light_mask = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 1, 0.133333, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="mainmenu/menuselect/selectionbox/selection/charview"]
+position = Vector2( 160, 160 )
+scale = Vector2( 5, 5 )
+frames = SubResource( 4 )
+animation = "char1"
+playing = true
+
+[node name="Start" type="TextureButton" parent="mainmenu/menuselect/selectionbox"]
+self_modulate = Color( 0.568627, 1, 0.494118, 1 )
+anchor_left = 0.505
+anchor_top = 1.0
+anchor_right = 0.505
+anchor_bottom = 1.0
+margin_left = -256.12
+margin_top = -272.0
+margin_right = 255.88
+margin_bottom = -176.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="mainmenu/menuselect/selectionbox/Start"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 5 )
+text = "Start"
+align = 1
+valign = 1
+
+[node name="Back" type="TextureButton" parent="mainmenu/menuselect/selectionbox"]
+self_modulate = Color( 0.756863, 0.435294, 1, 1 )
+anchor_left = 0.505
+anchor_top = 1.0
+anchor_right = 0.505
+anchor_bottom = 1.0
+margin_left = -256.12
+margin_top = -168.0
+margin_right = 255.88
+margin_bottom = -72.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="mainmenu/menuselect/selectionbox/Back"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 5 )
+text = "Back"
+align = 1
+valign = 1
+
+[node name="descriptionbox" type="Control" parent="mainmenu/menuselect"]
+anchor_left = 0.801
+anchor_right = 0.801
+margin_left = -201.28
+margin_right = 201.72
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="textbg" type="Sprite" parent="mainmenu/menuselect/descriptionbox"]
+self_modulate = Color( 0.611765, 0.713726, 0.866667, 1 )
+position = Vector2( 0, 24 )
+scale = Vector2( 4.2, 4.2 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="textbox1" type="Control" parent="mainmenu/menuselect/descriptionbox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="mainmenu/menuselect/descriptionbox/textbox1"]
+margin_left = 40.0
+margin_top = 64.0
+margin_right = 360.0
+margin_bottom = 144.0
+custom_fonts/font = SubResource( 6 )
+text = "Cecile"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text" type="RichTextLabel" parent="mainmenu/menuselect/descriptionbox/textbox1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 40.0
+margin_top = 168.0
+margin_right = -43.0
+margin_bottom = -72.0
+custom_fonts/normal_font = SubResource( 7 )
+text = "Description:
+(Xe/Xem/They/Them)
+- A person who identifies as nonbinary and never really conforms to gender roles. They are never taken seriously as xir peers are too ignorant to try to understand what xey go through.
+
+Can hide in plain sight for a short period of time, but cannot move in the duration."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="textbox2" type="Control" parent="mainmenu/menuselect/descriptionbox"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="mainmenu/menuselect/descriptionbox/textbox2"]
+margin_left = 40.0
+margin_top = 64.0
+margin_right = 360.0
+margin_bottom = 144.0
+custom_fonts/font = SubResource( 6 )
+text = "Caleb"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text" type="RichTextLabel" parent="mainmenu/menuselect/descriptionbox/textbox2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 40.0
+margin_top = 168.0
+margin_right = -43.0
+margin_bottom = -72.0
+custom_fonts/normal_font = SubResource( 7 )
+text = "Description:
+(He/Him)
+- A man who is comfortable in his masculinity, so he often likes to do things that are considered ‘girly’. Especially makeup! It’s surprising how much hate people feel towards him just because he happens to be a heterosexual man who likes girly things.
+
+He has Roller Skates equipped, making him much faster, and at the same time, harder to control."
+scroll_active = false
+
+[node name="textbox3" type="Control" parent="mainmenu/menuselect/descriptionbox"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="mainmenu/menuselect/descriptionbox/textbox3"]
+margin_left = 40.0
+margin_top = 64.0
+margin_right = 360.0
+margin_bottom = 144.0
+custom_fonts/font = SubResource( 6 )
+text = "Ladonna"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text" type="RichTextLabel" parent="mainmenu/menuselect/descriptionbox/textbox3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 40.0
+margin_top = 168.0
+margin_right = -43.0
+margin_bottom = -72.0
+custom_fonts/normal_font = SubResource( 7 )
+text = "Description:
+(She/Her)
+- A transwoman who is struggling to feel comfortable with herself or feel safe in a crowd. Without any reassurance, it’s hard to have confidence in herself as a woman.
+
+She can flash enemies nearby to disable them for a short period of time, due to carrying  a weapon means she moves slower.
+"
+
+[node name="menu2" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="menu2"]
+light_mask = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.588235 )
+
+[node name="menuitems" type="Control" parent="menu2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -576.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="menu2/menuitems"]
+anchor_top = 0.267
+anchor_bottom = 0.267
+margin_left = 152.0
+margin_top = -48.24
+margin_right = 704.0
+margin_bottom = 47.76
+custom_fonts/font = SubResource( 8 )
+text = "Game Paused"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resume" type="TextureButton" parent="menu2/menuitems"]
+self_modulate = Color( 0.568627, 1, 0.494118, 1 )
+anchor_top = 0.444
+anchor_bottom = 0.444
+margin_left = 152.0
+margin_top = -47.68
+margin_right = 488.0
+margin_bottom = 48.32
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="menu2/menuitems/Resume"]
+margin_right = 336.0
+margin_bottom = 96.0
+custom_fonts/font = SubResource( 2 )
+text = "Resume"
+align = 1
+valign = 1
+
+[node name="Settings" type="TextureButton" parent="menu2/menuitems"]
+self_modulate = Color( 0.34902, 1, 0.878431, 1 )
+anchor_top = 0.6
+anchor_bottom = 0.6
+margin_left = 152.0
+margin_top = -48.0
+margin_right = 488.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="menu2/menuitems/Settings"]
+margin_right = 336.0
+margin_bottom = 96.0
+custom_fonts/font = SubResource( 2 )
+text = "Settings"
+align = 1
+valign = 1
+
+[node name="Quit" type="TextureButton" parent="menu2/menuitems"]
+self_modulate = Color( 0.756863, 0.435294, 1, 1 )
+anchor_top = 0.756
+anchor_bottom = 0.756
+margin_left = 152.0
+margin_top = -48.32
+margin_right = 488.0
+margin_bottom = 47.68
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="menu2/menuitems/Quit"]
+margin_right = 336.0
+margin_bottom = 96.0
+custom_fonts/font = SubResource( 2 )
+text = "Quit"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HUD" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="HUD"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 48.0
+margin_top = 16.0
+margin_right = 1024.0
+margin_bottom = 96.0
+custom_fonts/font = SubResource( 9 )
+text = "Level 2: Misleading Paths"
+valign = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD/Title"]
+anims/idle = SubResource( 10 )
+anims/level1 = SubResource( 11 )
+anims/level2 = SubResource( 12 )
+
+[node name="AnimationTree" type="AnimationTree" parent="HUD/Title"]
+tree_root = SubResource( 20 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 21 )
+
+[node name="pause" type="TextureButton" parent="HUD"]
+self_modulate = Color( 1, 0.513726, 0.823529, 1 )
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -96.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = 96.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HUD/pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 22 )
+text = "II"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="controls" type="TextureButton" parent="HUD"]
+self_modulate = Color( 1, 0.513726, 0.823529, 1 )
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -176.0
+margin_top = 16.0
+margin_right = -96.0
+margin_bottom = 96.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HUD/controls"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 23 )
+text = "?"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bottomhud" type="Control" parent="HUD"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = -144.0
+margin_right = -32.0
+margin_bottom = -16.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bars" type="Control" parent="HUD/bottomhud"]
+modulate = Color( 0.639216, 0.639216, 0.639216, 1 )
+anchor_left = 0.368
+anchor_right = 0.632
+anchor_bottom = 1.0
+margin_left = 0.511963
+margin_right = -0.512024
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthBar" type="TextureProgress" parent="HUD/bottomhud/bars"]
+light_mask = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -160.0
+margin_top = -48.0
+margin_right = 160.0
+margin_bottom = 1.0
+step = 0.01
+texture_under = ExtResource( 21 )
+texture_progress = ExtResource( 20 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StaminaBar" type="TextureProgress" parent="HUD/bottomhud/bars"]
+light_mask = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -160.0
+margin_right = 160.0
+margin_bottom = 48.0
+step = 0.01
+texture_under = ExtResource( 23 )
+texture_over = ExtResource( 24 )
+texture_progress = ExtResource( 22 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="equipped" type="Control" parent="HUD/bottomhud"]
+anchor_left = 0.789
+anchor_top = 0.508
+anchor_right = 0.789
+anchor_bottom = 0.508
+margin_left = -159.424
+margin_top = -65.024
+margin_right = 160.576
+margin_bottom = 62.976
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="HUD/bottomhud/equipped"]
+position = Vector2( 8.00006, 16 )
+scale = Vector2( 2.75, 3 )
+texture = ExtResource( 26 )
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD/bottomhud/equipped"]
+anims/key_A = SubResource( 24 )
+anims/key_ab = SubResource( 25 )
+anims/key_b = SubResource( 26 )
+anims/none = SubResource( 27 )
+
+[node name="dialouge" type="Control" parent="HUD"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -448.0
+margin_top = 88.0
+margin_right = 448.0
+margin_bottom = 208.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="text" type="Label" parent="HUD/dialouge"]
+self_modulate = Color( 1, 1, 1, 0.705882 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 28 )
+text = "It seems that they form a whole key now..."
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD/dialouge"]
+anims/idle = SubResource( 29 )
+anims/its_locked = SubResource( 30 )
+anims/level1_1key = SubResource( 31 )
+anims/level1_allkeys = SubResource( 32 )
+anims/level1_scene2 = SubResource( 33 )
+anims/level1_started = SubResource( 34 )
+anims/ok_that_should_do_it = SubResource( 35 )
+anims/one_more_keypart = SubResource( 36 )
+
+[node name="AnimationTree" type="AnimationTree" parent="HUD/dialouge"]
+tree_root = SubResource( 59 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 60 )
+
+[node name="bigtext" type="Control" parent="HUD"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RUN" type="Control" parent="HUD/bigtext"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="HUD/bigtext/RUN"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.482353, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HUD/bigtext/RUN"]
+self_modulate = Color( 1, 1, 1, 0.501961 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 61 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "RUN"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BEWARE" type="Control" parent="HUD/bigtext"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="HUD/bigtext/BEWARE"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.0156863, 0, 0.482353, 0.486275 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HUD/bigtext/BEWARE"]
+self_modulate = Color( 1, 1, 1, 0.392157 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 62 )
+custom_colors/font_color = Color( 0, 0.27451, 1, 1 )
+text = "BEWARE"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/hud_beware = SubResource( 63 )
+anims/hud_idle = SubResource( 64 )
+anims/hud_run = SubResource( 65 )
+anims/menuselect_slidein = SubResource( 66 )
+anims/menuselect_slideout = SubResource( 67 )
+
+[node name="HUDanimtree" type="AnimationTree" parent="."]
+tree_root = SubResource( 77 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 78 )
+
+[connection signal="pressed" from="mainmenu/menu1/menuitems/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="mainmenu/menu1/menuitems/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="mainmenu/menuselect/selectionbox/selection/leftselect" to="." method="_on_leftselect_pressed"]
+[connection signal="pressed" from="mainmenu/menuselect/selectionbox/selection/rightselect" to="." method="_on_rightselect_pressed"]
+[connection signal="pressed" from="mainmenu/menuselect/selectionbox/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="mainmenu/menuselect/selectionbox/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="menu2/menuitems/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="pressed" from="menu2/menuitems/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="HUD/pause" to="." method="_on_pause_pressed"]
